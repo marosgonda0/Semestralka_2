@@ -1,6 +1,6 @@
 package fri.uniza.sk.hraci;
 
-import fri.uniza.sk.objekty.Karta;
+import fri.uniza.sk.objekty.karty.Karta;
 
 public class PocitacoviHrac implements Hrac {
 
