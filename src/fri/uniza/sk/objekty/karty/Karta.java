@@ -10,4 +10,20 @@ public abstract class Karta {
         this.farba = farba;
         this.obrazok = obrazok;
     }
+
+    public void polozKartu() {
+        System.out.println("Karta bola polozena");
+    }
+
+    public String getZnak() {
+        return this.znak;
+    }
+
+    public String getFarba() {
+        return this.farba;
+    }
+
+    public String getObrazok() {
+        return this.obrazok;
+    }
 }

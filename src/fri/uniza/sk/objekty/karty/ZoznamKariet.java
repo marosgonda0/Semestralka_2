@@ -44,4 +44,16 @@ public enum ZoznamKariet {
         this.farba = farba;
         this.obrazok = obrazok;
     }
+
+    public String getZnak() {
+        return this.znak;
+    }
+
+    public String getFarba() {
+        return this.farba;
+    }
+
+    public String getObrazok() {
+        return this.obrazok;
+    }
 }
