@@ -5,7 +5,8 @@ import fri.uniza.sk.objekty.BalicekKariet;
 public class Main {
     public static void main(String[] args) {
         BalicekKariet balicekKariet = new BalicekKariet();
-        balicekKariet.naplnBalik();
+        balicekKariet.napln();
+        balicekKariet.zamiesaj();
         balicekKariet.vypisKarty();
     }
 }

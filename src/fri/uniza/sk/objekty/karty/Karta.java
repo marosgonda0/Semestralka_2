@@ -11,9 +11,7 @@ public abstract class Karta {
         this.obrazok = obrazok;
     }
 
-    public void polozKartu() {
-        System.out.println("Karta bola polozena");
-    }
+    public abstract void vykonajAkciu();
 
     public String getZnak() {
         return this.znak;
