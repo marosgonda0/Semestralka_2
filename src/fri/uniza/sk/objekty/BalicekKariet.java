@@ -6,22 +6,42 @@ import java.util.ArrayList;
 
 public class BalicekKariet {
     private ArrayList<Karta> karty;
-    private int pocetKariet;
 
     public BalicekKariet() {
-        this.pocetKariet = 32;
         this.karty = new ArrayList<>();
     }
 
     public void napln() {
         for (ZoznamKariet karta : ZoznamKariet.values()) {
-            this.karty.add(new Karta(karta.getZnak(), karta.getFarba(), karta.getObrazok()));
+            switch (karta.getZnak()) {
+                case "hornik":
+                    this.karty.add(new Hornik(karta.getZnak(), karta.getFarba(), karta.getObrazok()));
+                    break;
+                case "sedma":
+                    if (karta.getFarba().equals("cerven")) {
+                        this.karty.add(new SedmaCerven(karta.getZnak(), karta.getFarba(), karta.getObrazok()));
+                    } else {
+                        this.karty.add(new Sedma(karta.getZnak(), karta.getFarba(), karta.getObrazok()));
+                    }
+                    break;
+                case "dolnik":
+                    if (karta.getFarba().equals("zelen")) {
+                        this.karty.add(new DolnikZelen(karta.getZnak(), karta.getFarba(), karta.getObrazok()));
+                    }
+                    break;
+                case "eso":
+                    this.karty.add(new Eso(karta.getZnak(), karta.getFarba(), karta.getObrazok()));
+                    break;
+                default:
+                    this.karty.add(new ObycajnaKarta(karta.getZnak(), karta.getFarba(), karta.getObrazok()));
+                    break;
+            }
         }
     }
 
     public void zamiesaj() {
-        for (int i = 0; i < this.pocetKariet; i++) {
-            int randomIndex = (int)(Math.random() * this.pocetKariet);
+        for (int i = 0; i < this.karty.size(); i++) {
+            int randomIndex = (int)(Math.random() * this.karty.size());
             Karta temp = this.karty.get(i);
             this.karty.set(i, this.karty.get(randomIndex));
             this.karty.set(randomIndex, temp);
@@ -38,7 +58,7 @@ public class BalicekKariet {
     }
 
     public void vypisKarty() {
-        for (int i = 0; i < this.pocetKariet; i++) {
+        for (int i = 0; i < this.karty.size(); i++) {
             System.out.println(this.karty.get(i).getZnak() + " " + this.karty.get(i).getFarba());
         }
     }

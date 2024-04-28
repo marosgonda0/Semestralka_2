@@ -7,6 +7,5 @@ public class ObycajnaKarta extends Karta {
 
     @Override
     public void vykonajAkciu() {
-
     }
 }

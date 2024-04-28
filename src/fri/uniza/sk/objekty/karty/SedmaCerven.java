@@ -9,4 +9,6 @@ public class SedmaCerven extends Karta {
     public void vykonajAkciu() {
 
     }
+
+
 }

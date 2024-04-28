@@ -1,7 +1,7 @@
 package fri.uniza.sk.objekty.karty;
 
-public class DolnikZeleny extends Karta {
-    public DolnikZeleny(String znak, String farba, String obrazok) {
+public class DolnikZelen extends Karta {
+    public DolnikZelen(String znak, String farba, String obrazok) {
         super(znak, farba, obrazok);
     }
 
