@@ -17,7 +17,11 @@ public abstract class Hrac {
         this.kartyNaRuke.addAll(Arrays.asList(karty));
     }
 
-    public abstract Karta hraj(Karta kartaNaVrchuBalicka, BalicekKariet balicekKariet);
+    public abstract ArrayList<Karta> hraj(Karta kartaNaVrchuBalicka, BalicekKariet balicekKariet);
+
+    public ArrayList<Karta> getKartyNaRuke() {
+        return this.kartyNaRuke;
+    }
 
     protected void zoberSiKartu(BalicekKariet balicekKariet) {
         this.kartyNaRuke.add(balicekKariet.dajKartu());

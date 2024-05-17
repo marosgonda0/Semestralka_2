@@ -5,24 +5,36 @@ import java.util.ArrayList;
 import fri.uniza.sk.hraci.Hrac;
 import fri.uniza.sk.hraci.LudskyHrac;
 import fri.uniza.sk.hraci.PocitacoviHrac;
+import fri.uniza.sk.objekty.BalicekKariet;
 import fri.uniza.sk.objekty.karty.Karta;
 
 public class Hra {
     private Hrac[] hraci;
+    private BalicekKariet balicekKariet;
 
-    public Hra(int pocetHracov ) {
+    public Hra(int pocetHracov) {
         if (pocetHracov < 2 || pocetHracov > 4) {
             throw new IllegalArgumentException("Hra musí mať 2 až 4 hráčov.");
         }
         this.hraci = new Hrac[pocetHracov];
+        this.balicekKariet = new BalicekKariet();
+        this.balicekKariet.napln();
         this.pridajHracov();
+        this.spustiKolo();
     }
 
     public void pridajHracov() {
         this.hraci[0] = new LudskyHrac();
+        //this.hraci[0] = new PocitacoviHrac();
         for (int i = 1; i < this.hraci.length; i++) {
             this.hraci[i] = new PocitacoviHrac();
         }
+    }
+
+    public void spustiKolo() {
+        Kolo kolo = new Kolo(this.hraci, this.balicekKariet);
+        kolo.rozdajKarty();
+        kolo.zahrajKolo();
     }
 
 

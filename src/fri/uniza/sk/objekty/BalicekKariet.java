@@ -27,6 +27,8 @@ public class BalicekKariet {
                 case "dolnik":
                     if (karta.getFarba().equals("zelen")) {
                         this.karty.add(new DolnikZelen(karta.getZnak(), karta.getFarba(), karta.getObrazok()));
+                    } else {
+                        this.karty.add(new ObycajnaKarta(karta.getZnak(), karta.getFarba(), karta.getObrazok()));
                     }
                     break;
                 case "eso":
