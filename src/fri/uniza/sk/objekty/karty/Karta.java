@@ -5,6 +5,8 @@ public abstract class Karta {
     private String farba;
     private String obrazok;
 
+
+
     public Karta(String znak, String farba, String obrazok) {
         this.znak = znak;
         this.farba = farba;

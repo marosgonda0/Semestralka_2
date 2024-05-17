@@ -62,4 +62,10 @@ public class BalicekKariet {
             System.out.println(this.karty.get(i).getZnak() + " " + this.karty.get(i).getFarba());
         }
     }
+
+    public Karta dajKartu() {
+        Karta karta = this.karty.get(0);
+        this.karty.remove(0);
+        return karta;
+    }
 }
